@@ -1,0 +1,41 @@
+---
+# vars file for ansible-role-xmr-stak
+xmr-currency: monero
+
+xmr-stak-base-dir: ~/xmr-stak22
+xmr-stak-build-dir: "{{ xmr-stak-base-dir }}/build"
+xmr-build-options:
+  make_install_prefix: "{{ xmr-stak-base-dir }}"
+  make_link_static: OFF
+  make_build_type: Release
+  microhttpd_enable: OFF
+  OpenSSL_ENABLE: OFF
+  XMR-STAK_Currency: "{{ xmr-currency }}"
+  XMR-STAK_COMPILE: native
+  CPU_ENABLE: ON
+  HWLOC_ENABLE: ON
+  OpenCL_ENABLE: OFF
+  CUDA_ENABLE: OFF
+
+xmr-pool-address: cryptonight.usa.nicehash.com:3355
+xmr-wallet-address: 1NYTak57oEYJwzTrG9wwAtM9Q44DwMBFLq
+xmr-pool-password: "x"
+xmr-use-nicehash: "true"
+xmr-use-tls: "false"
+xmr-tls-fingerprint: ""
+xmr-pool-weight: 1
+xmr-call-timeout: 10
+xmr-retry-time: 30
+xmr-giveup-limit: 0
+xmr-verbose-level: 3
+xmr-print-motd: "true"
+xmr-h-print-time: 60
+xmr-use-slow-memory: warn
+xmr-tls-secure-algo: "true"
+xmr-daemon-mode: "false"
+xmr-flush-stdout: "false"
+xmr-output-file: ""
+xmr-httpd-port: 16000
+xmr-http-login: ""
+xmr-http-pass: ""
+xmr-prefer-ipv4: "true"

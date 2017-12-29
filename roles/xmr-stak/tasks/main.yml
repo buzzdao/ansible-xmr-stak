@@ -1,0 +1,36 @@
+---
+# tasks file for ansible-role-xmr-stak
+- name: Update apt.
+  apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+- name: Get requiremnts.
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - libmicrohttpd-dev
+    - libssl-dev
+    - cmake
+    - build-essential
+    - libhwloc-dev
+
+- name: Download sources.
+  git:
+    repo: https://github.com/buzzdao/xmr-stak.git
+    dest: "{{ xmr-stak-base-dir }}"
+
+- name: Create the working directory.
+  path: "{{ xmr-stak-build-dir }}"
+  state: directory
+
+- name: Make the package.
+  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
+  args:
+    chdir: "{{ xmr-stak-build-dir }}"
+  with_items: "{{ xmr-build-options }}"
+
+- name: Install the package.
+  command: make install
+  args:
+    chdir: "{{ xmr-stak-build-dir }}"
