@@ -18,7 +18,7 @@
 - name: Download sources.
   include_vars:
     dir: "vars/all"
-  git:
+- git:
     repo: https://github.com/buzzdao/xmr-stak.git
     dest: "{{ xmr-stak-base-dir }}"
 
