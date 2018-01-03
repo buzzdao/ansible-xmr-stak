@@ -1,17 +1,17 @@
 ---
 # vars file for ansible-role-xmr-stak
-xmr-currency: monero
+xmr_currency: monero
 
 xmr_stak_base_dir: /root/xmr-stak22
-xmr-stak-build-dir: "{{ xmr_stak_base_dir }}/build"
-xmr-build-options:
-  make_install_prefix: "{{ xmr-stak-base-dir }}"
+xmr_stak_build_dir: "{{ xmr_stak_base_dir }}/build"
+xmr_build_options: -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
+  make_install_prefix: "{{ xmr_stak_base_dir }}"
   make_link_static: OFF
   make_build_type: Release
   microhttpd_enable: OFF
   OpenSSL_ENABLE: OFF
-  XMR-STAK_Currency: "{{ xmr-currency }}"
-  XMR-STAK_COMPILE: native
+  XMR_STAK_Currency: "{{ xmr_currency }}"
+  XMR_STAK_COMPILE: native
   CPU_ENABLE: ON
   HWLOC_ENABLE: ON
   OpenCL_ENABLE: OFF

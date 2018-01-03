@@ -24,20 +24,15 @@
     repo: https://github.com/buzzdao/xmr-stak.git
     dest: "{{ xmr_stak_base_dir }}"
 
-#- name: Create the working directory.
-#  include_vars:
-#    dir: "vars"
-#  path: "{{ xmr-stak-build-dir }}"
-#  state: directory
+- name: Create the working directory.
+  path: "{{ xmr_stak_build_dir }}"
+  state: directory
 
-#- name: Make the package.
-#  include_vars:
-#    dir: "vars/all"
-#  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
-#    command: "cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF"
-#  args:
-#    chdir: "{{ xmr-stak-build-dir }}"
-#  with_items: "{{ xmr-build-options }}"
+- name: Make the package.
+  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
+  args:
+    chdir: "{{ xmr-stak-build-dir }}"
+  with_items: "{{ xmr-build-options }}"
 
 #- name: Install the package.
 #  include_vars:
