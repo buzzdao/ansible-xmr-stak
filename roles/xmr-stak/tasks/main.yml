@@ -15,20 +15,20 @@
     - build-essential
     - libhwloc-dev
 
-- name: Download sources.
+#- name: Download sources.
 #  include_vars:
 #    dir: "vars/all"
 #- git:
 #    repo: https://github.com/buzzdao/xmr-stak.git
 #    dest: "{{ xmr-stak-base-dir }}"
 
-- name: Create the working directory.
+#- name: Create the working directory.
 #  include_vars:
 #    dir: "vars/all"
 #  path: "{{ xmr-stak-build-dir }}"
 #  state: directory
 
-- name: Make the package.
+#- name: Make the package.
 #  include_vars:
 #    dir: "vars/all"
 #  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
@@ -37,7 +37,7 @@
 #    chdir: "{{ xmr-stak-build-dir }}"
 #  with_items: "{{ xmr-build-options }}"
 
-- name: Install the package.
+#- name: Install the package.
 #  include_vars:
 #    dir: "vars/all"
 #  command: make install
