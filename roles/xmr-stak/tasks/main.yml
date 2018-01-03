@@ -22,7 +22,7 @@
 - name: Download sources.
   git:
     repo: https://github.com/buzzdao/xmr-stak.git
-    dest: "{{ xmr-stak-base-dir }}"
+    dest: "{{ xmr_stak_base_dir }}"
 
 #- name: Create the working directory.
 #  include_vars:
