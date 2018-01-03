@@ -20,7 +20,7 @@
     - libhwloc-dev
 
 - name: Download sources.
-- git:
+  git:
     repo: https://github.com/buzzdao/xmr-stak.git
     dest: "{{ xmr-stak-base-dir }}"
 
