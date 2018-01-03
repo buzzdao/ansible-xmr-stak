@@ -31,7 +31,8 @@
 - name: Make the package.
   include_vars:
     dir: "vars/all"
-  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
+#  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
+    command: "cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF"
   args:
     chdir: "{{ xmr-stak-build-dir }}"
   with_items: "{{ xmr-build-options }}"
