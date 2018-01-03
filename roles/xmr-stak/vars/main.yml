@@ -3,8 +3,8 @@
 xmr_currency: monero
 
 xmr_stak_base_dir: /root/xmr-stak22
-xmr_build_options: "-DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF"
-  make_install_prefix: "{{ xmr_stak_base_dir }}"
+xmr_build_options: 
+  make_install_prefix: - "{{ xmr_stak_base_dir }}"
   make_link_static: OFF
   make_build_type: Release
   microhttpd_enable: OFF
