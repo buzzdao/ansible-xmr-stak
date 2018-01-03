@@ -1,9 +1,9 @@
 ---
 # tasks file for ansible-xmr-stak
-- name: Update apt.
-  apt:
-      update_cache: yes
-      cache_valid_time: 3600
+#- name: Update apt.
+#  apt:
+#      update_cache: yes
+#      cache_valid_time: 3600
 
 - name: Get requiremnts.
   apt:
