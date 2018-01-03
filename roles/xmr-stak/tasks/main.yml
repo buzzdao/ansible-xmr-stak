@@ -6,7 +6,6 @@
 #      cache_valid_time: 3600
 
 - name: apt install requiremnts
-  become_method: sudo
   apt:
     name: libmicrohttpd-dev
     state: present
