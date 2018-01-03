@@ -25,13 +25,13 @@
     dest: "{{ xmr_stak_base_dir }}"
 
 - name: Create the working directory.
-  path: "{{ xmr_stak_build_dir }}"
+  path: "{{ xmr_stak_base_dir }}/build"
   state: directory
 
 - name: Make the package.
   command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
   args:
-    chdir: "{{ xmr-stak-build-dir }}"
+    chdir: "{{ xmr_stak_base_dir }}/build"
   with_items: "{{ xmr-build-options }}"
 
 #- name: Install the package.
