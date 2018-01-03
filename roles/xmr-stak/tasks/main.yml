@@ -1,23 +1,23 @@
 ---
 # tasks file for ansible-xmr-stak
-#- name: Update apt.
-#  apt:
-#      update_cache: yes
-#      cache_valid_time: 3600
-
-- name: apt install requiremnts
+- name: Update apt.
   apt:
-    name: libmicrohttpd-dev
-    state: present
-#- name: Get requiremnts.
+      update_cache: yes
+      cache_valid_time: 3600
+
+#- name: apt install requiremnts
 #  apt:
-#    name: "{{ item }}"
-#  with_items:
-#    - libmicrohttpd-dev
-#    - libssl-dev
-#    - cmake
-#    - build-essential
-#    - libhwloc-dev
+#    name: libmicrohttpd-dev
+#    state: present
+- name: Get requiremnts.
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - libmicrohttpd-dev
+    - libssl-dev
+    - cmake
+    - build-essential
+    - libhwloc-dev
 
 #- name: Download sources.
 #  include_vars:
