@@ -5,15 +5,19 @@
 #      update_cache: yes
 #      cache_valid_time: 3600
 
-- name: Get requiremnts.
+- name: apt install requiremnts
   apt:
-    name: "{{ item }}"
-  with_items:
-    - libmicrohttpd-dev
-    - libssl-dev
-    - cmake
-    - build-essential
-    - libhwloc-dev
+    name: libmicrohttpd-dev
+    state: present
+#- name: Get requiremnts.
+#  apt:
+#    name: "{{ item }}"
+#  with_items:
+#    - libmicrohttpd-dev
+#    - libssl-dev
+#    - cmake
+#    - build-essential
+#    - libhwloc-dev
 
 #- name: Download sources.
 #  include_vars:
