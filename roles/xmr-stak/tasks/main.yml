@@ -19,6 +19,7 @@
   git:
     repo: https://github.com/buzzdao/xmr-stak.git
     dest: "{{ xmr_stak_base_dir }}"
+    force: yes
 
 - name: Create the working directory.
   file:
