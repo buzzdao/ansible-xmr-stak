@@ -31,9 +31,7 @@
     chdir: "{{ xmr_stak_build_dir }}"
   with_items: "{{ xmr_build_options }}"
 
-#- name: Install the package.
-#  include_vars:
-#    dir: "vars/all"
-#  command: make install
-#  args:
-#    chdir: "{{ xmr-stak-build-dir }}"
+- name: Install the package.
+  command: make install
+  args:
+    chdir: "{{ xmr-stak-build-dir }}"
