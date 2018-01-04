@@ -95,7 +95,7 @@
     - check
 
 - name: Stop Stak
-  shell: "killall xmr-stak"
+  script: scripts/stopstak.sh start
   tags:
     - stopstak
 
@@ -107,4 +107,4 @@
 - name: Start Stak22
   script: scripts/xmrstak22.sh start
   tags:
-    - startstak22            
+    - startstak22
