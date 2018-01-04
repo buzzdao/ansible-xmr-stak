@@ -24,9 +24,9 @@
     repo: https://github.com/buzzdao/xmr-stak.git
     dest: "{{ xmr_stak_base_dir }}"
 
-#- name: Create the working directory.
-#  path: "{{ xmr_stak_base_dir }}/build"
-#  state: directory
+- name: Create the working directory.
+  path: "{{ xmr_stak_build_dir }}"
+  state: directory
 
 #- name: Make the package.
 #  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
