@@ -29,7 +29,7 @@
   command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
   args:
     chdir: "{{ xmr_stak_build_dir }}"
-  with_items: "{{ xmr-build-options }}"
+  with_items: "{{ xmr_build_options }}"
 
 #- name: Install the package.
 #  include_vars:
