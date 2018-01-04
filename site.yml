@@ -1,4 +1,4 @@
-- hosts: v3
+- hosts: all
   roles:
   - role: xmr-stak
     become: yes
