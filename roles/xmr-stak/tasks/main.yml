@@ -88,3 +88,8 @@
   script: scripts/localproxyus.sh start
   tags:
     - localproxyus
+
+- name: Check Server Status
+  shell: "ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head -2"
+  tags:
+    - check
