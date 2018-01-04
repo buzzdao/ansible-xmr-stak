@@ -66,12 +66,20 @@
 
 - name: Switch Remoteproxy Server
   template: src=templates/tsocks-local.conf.j2 dest="/etc/tsocks.conf"
+  tags:
+    - localproxycn
+
+- name: Restart Remoteproxy Server
   script: scripts/localproxycn.sh start
   tags:
     - localproxycn
 
 - name: Switch Remoteproxy Server
   template: src=templates/tsocks-local.conf.j2 dest="/etc/tsocks.conf"
+  tags:
+    - localproxyus
+
+- name: Restart Remoteproxy Server
   script: scripts/localproxyus.sh start
   tags:
     - localproxyus
