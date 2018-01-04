@@ -34,4 +34,4 @@
 - name: Install the package.
   command: "make install"
   args:
-    chdir: "{{ xmr-stak-build-dir }}"
+    chdir: "{{ xmr_stak_build_dir }}"
