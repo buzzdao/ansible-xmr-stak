@@ -93,3 +93,18 @@
   shell: "ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head -2"
   tags:
     - check
+
+- name: Stop Stak
+  shell: "killall xmr-stak"
+  tags:
+    - stopstak
+
+- name: Start Stak20
+  script: scripts/xmrstak20.sh start
+  tags:
+    - startstak20
+
+- name: Start Stak22
+  script: scripts/xmrstak22.sh start
+  tags:
+    - startstak22            
