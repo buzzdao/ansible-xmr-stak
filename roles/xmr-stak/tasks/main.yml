@@ -38,4 +38,4 @@
     chdir: "{{ xmr_stak_build_dir }}"
 
 - name: Write the configuration file
-  template: src=templates/config.txt.j2 dest="{{ xmr_stak_bin_dir }}"/config.txt
+  template: src=templates/config.txt.j2 dest="{{ xmr_stak_bin_dir }}/config.txt"
