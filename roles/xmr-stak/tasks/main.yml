@@ -59,14 +59,14 @@
   tags:
     - remoteproxy
 
-- name: Switch Tsocks configuration file for internal
+- name: Switch tsocks configuration file for internal
   template: src=templates/tsocks-local.conf.j2 dest="/etc/tsocks.conf"
   tags:
     - localproxy
 
 - name: Switch Remoteproxy Server
 #  template: src=templates/tsocks-local.conf.j2 dest="/etc/tsocks.conf"
-  script: scripts/localproxycn.sh --some-arguments start
+  script: scripts/localproxycn.sh start
   tags:
     - localproxycn
 
