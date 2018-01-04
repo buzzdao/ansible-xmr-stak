@@ -4,6 +4,7 @@ xmr_currency: monero
 
 xmr_stak_base_dir: /root/xmr-stak22
 xmr_stak_build_dir: "{{ xmr_stak_base_dir }}/build"
+xmr_stak_bin_dir: "{{ xmr_stak_build_dir }}/bin"
 xmr_build_options:
   make_install_prefix: "{{ xmr_stak_build_dir }}"
   make_link_static: OFF
