@@ -59,7 +59,7 @@
   tags:
     -localproxy
 
-- name: Switch Tsocks configuration file for internal
+- name: Switch Tsocks configuration file for external
   template: src=templates/tsocks-remote.j2 dest="/etc/tsocks.conf"
   tags:
     -remoteproxy
