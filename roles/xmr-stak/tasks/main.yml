@@ -26,7 +26,7 @@
     state: directory
 
 - name: Make the package.
-  command: "cmake .. -D{{ item[0] }}={{ item[1] }}"
+  command: "cmake .. -D{{ item[0] }}={{ item[10] }}"
   args:
     chdir: "{{ xmr_stak_build_dir }}"
   with_items: "{{ xmr_build_options }}"
