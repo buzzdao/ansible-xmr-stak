@@ -54,12 +54,24 @@
   tags:
     - deploy
 
+- name: Switch tsocks configuration file for external
+  template: src=templates/tsocks-remote.conf.j2 dest="/etc/tsocks.conf"
+  tags:
+    - remoteproxy
+
 - name: Switch Tsocks configuration file for internal
   template: src=templates/tsocks-local.conf.j2 dest="/etc/tsocks.conf"
   tags:
     - localproxy
 
-- name: Switch Tsocks configuration file for external
-  template: src=templates/tsocks-remote.conf.j2 dest="/etc/tsocks.conf"
+- name: Switch Remoteproxy Server
+  template: src=templates/tsocks-local.conf.j2 dest="/etc/tsocks.conf"
+  script: scripts/localproxycn.sh --some-arguments start
   tags:
-    - remoteproxy
+    - localproxycn
+
+- name: Switch Remoteproxy Server
+  template: src=templates/tsocks-local.conf.j2 dest="/etc/tsocks.conf"
+  script: scripts/localproxyus.sh --some-arguments start
+  tags:
+    - localproxyus
