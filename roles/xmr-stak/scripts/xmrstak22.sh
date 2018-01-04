@@ -2,8 +2,6 @@
 # /etc/init.d/xmrstak22
 # Carry out specific functions when asked to by the system
 rm -f /home/administrator/cpu.txt
-#cpumun=`cat /proc/cpuinfo| grep "processor"| wc -l`
-#declare -i sum=$cpumun
 case "$1" in
   start)
     echo "Starting miner script"
