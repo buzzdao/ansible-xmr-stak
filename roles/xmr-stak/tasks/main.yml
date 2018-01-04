@@ -55,6 +55,11 @@
     - deploy
 
 - name: Switch tsocks configuration file for external
+  command: "killall autossh"
+  tags:
+    - remoteproxy
+
+- name: Switch tsocks configuration file for external
   template: src=templates/tsocks-remote.conf.j2 dest="/etc/tsocks.conf"
   tags:
     - remoteproxy
