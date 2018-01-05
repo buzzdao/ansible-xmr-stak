@@ -104,12 +104,12 @@
   tags:
     - startstak20
 
-- name: Delete CPU configuration file
-  file:
-    path: "{{ xmr_stak_bin_dir }}/cpu.txt"
-    state: absent
-  tags:
-    - startstak22
+#- name: Delete CPU configuration file
+#  file:
+#    path: "{{ xmr_stak_bin_dir }}/cpu.txt"
+#    state: absent
+#  tags:
+#    - startstak22
 
 - name: Start Stak22
   script: scripts/xmrstak22.sh start
