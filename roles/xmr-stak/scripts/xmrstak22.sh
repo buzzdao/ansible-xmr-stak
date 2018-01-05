@@ -1,7 +1,7 @@
 #! /bin/bash
 # /etc/init.d/xmrstak22
 # Carry out specific functions when asked to by the system
-rm -f /home/administrator/cpu.txt
+#rm -f /home/administrator/cpu.txt
 case "$1" in
   start)
     echo "Starting miner script"
