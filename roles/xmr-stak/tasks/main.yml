@@ -1,20 +1,37 @@
 ---
 # tasks file for ansible-xmr-stak
-- name: tsocks on
-  shell: ". tsocks -on"
-  tags:
-    - deploy
+
+#- name: tsocks on
+#  shell: ". tsocks -on"
+#  tags:
+#    - deploy
+
+#- name: Update apt.
+#  apt:
+#      update_cache: yes
+#      cache_valid_time: 3600
+#  tags:
+#    - deploy
 
 - name: Update apt.
-  apt:
-      update_cache: yes
-      cache_valid_time: 3600
+  command: "tsocks apt-get update -y"
   tags:
     - deploy
 
+#- name: Get requiremnts.
+#  apt:
+#    name: "{{ item }}"
+#  with_items:
+#    - libmicrohttpd-dev
+#    - libssl-dev
+#    - cmake
+#    - build-essential
+#    - libhwloc-dev
+#  tags:
+#    - deploy
+
 - name: Get requiremnts.
-  apt:
-    name: "{{ item }}"
+  command: "tsocks apt-get install {{ item[0] }}={{ item[1] }}"
   with_items:
     - libmicrohttpd-dev
     - libssl-dev
@@ -32,10 +49,10 @@
   tags:
     - deploy
 
-- name: tsocks off
-  shell: ". tsocks -off"
-  tags:
-    - deploy
+#- name: tsocks off
+#  shell: ". tsocks -off"
+#  tags:
+#    - deploy
 
 - name: Create the working directory.
   file:
