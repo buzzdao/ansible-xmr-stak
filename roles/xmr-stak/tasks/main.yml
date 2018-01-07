@@ -1,7 +1,9 @@
 ---
 # tasks file for ansible-xmr-stak
 - name: tsocks on
-  command: "sudo . /usr/bin/tsocks -on"
+  command: ". tsocks -on"
+  args:
+    chdir: "/usr/bin"
   tags:
     - deploy
 
@@ -33,7 +35,9 @@
     - deploy
 
 - name: tsocks off
-  command: "sudo . /usr/bin/tsocks -off"
+  command: ". tsocks -off"
+  args:
+    chdir: "/usr/bin"
   tags:
     - deploy
 
