@@ -36,7 +36,6 @@
 
 - name: tsocks off
   shell: ". tsocks -off"
-  sudo: yes
   args:
     chdir: "/usr/bin"
   tags:
