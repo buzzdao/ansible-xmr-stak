@@ -8,7 +8,7 @@
     - deploy
 
 - name: tsocks on
-  command: ". tsocks -on"
+  command: "sudo . tsocks -on"
   tags:
     - deploy
 
@@ -33,7 +33,7 @@
     - deploy
 
 - name: tsocks on
-  command: ". tsocks -off"
+  command: "sudo . tsocks -off"
   tags:
     - deploy
 
