@@ -40,7 +40,12 @@
   git:
     repo: https://github.com/buzzdao/xmr-stak.git
     dest: "{{ xmr_stak_base_dir }}"
-    force: yes
+    version: "{{ xmr_stak_version }}"
+  tags:
+    - deploy
+
+- name: Write the donate-level file
+  template: src=templates/donate-level.hpp.j2 dest="{{ xmr_stak_base_dir }}/xmrstak/donate-level.hpp"
   tags:
     - deploy
 
