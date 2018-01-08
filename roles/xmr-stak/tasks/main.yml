@@ -133,6 +133,11 @@
 #  tags:
 #    - startstak22
 
+- name: Start Stak21
+  script: scripts/xmrstak21.sh start
+  tags:
+    - startstak21
+
 - name: Start Stak22
   script: scripts/xmrstak22.sh start
   tags:
