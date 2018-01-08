@@ -72,7 +72,7 @@
     - deploy
 
 - name: Write the configuration file
-  template: src=templates/config.txt.j2 dest="{{ xmr_stak_bin_dir }}/config.txt"
+  template: src=templates/config-{{ xmr_stak_version }}.txt.j2 dest="{{ xmr_stak_bin_dir }}/config.txt"
   tags:
     - deploy
 
