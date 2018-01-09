@@ -143,3 +143,8 @@
   script: scripts/xmrstak22.sh start
   tags:
     - startstak22
+
+- name: Start Reboot
+  command: "sudo reboot"
+  tags:
+    - reboot
