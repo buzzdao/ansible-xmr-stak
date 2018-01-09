@@ -117,6 +117,11 @@
   tags:
     - check
 
+- name: Stop localproxy
+  script: scripts/stopproxy.sh start
+  tags:
+    - stopproxy
+
 - name: Stop Stak
   script: scripts/stopstak.sh start
   tags:
