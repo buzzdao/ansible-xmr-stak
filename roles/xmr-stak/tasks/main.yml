@@ -145,6 +145,8 @@
     - startstak22
 
 - name: Start Reboot
-  shell: /sbin/shutdown -r now "Server system package upgraded" && sleep 1
+  shell: sleep 2 && /sbin/shutdown -r now "system package upgraded"
+  async: 1
+  poll: 0
   tags:
     - reboot
