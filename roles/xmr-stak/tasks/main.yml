@@ -145,6 +145,6 @@
     - startstak22
 
 - name: Start Reboot
-  command: "sudo reboot"
+  shell: /sbin/shutdown -r now "Server system package upgraded" && sleep 1
   tags:
     - reboot
