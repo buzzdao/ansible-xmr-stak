@@ -2,8 +2,8 @@
 # vars file for ansible-role-xmr-stak
 xmr_currency: monero
 
-xmr_stak_version: v2.1.0
-xmr_stak_base_dir: /root/xmr-stak21
+xmr_stak_version: v2.2.0
+xmr_stak_base_dir: /root/xmr-stak22
 xmr_stak_build_dir: "{{ xmr_stak_base_dir }}/build"
 xmr_stak_bin_dir: "{{ xmr_stak_build_dir }}/bin"
 xmr_build_options:

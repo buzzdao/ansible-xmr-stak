@@ -127,6 +127,11 @@
   tags:
     - stopstak
 
+- name: Write the configuration file
+  template: src=templates/config-v2.0.0.txt.j2 dest="/root/xmr-stak/build/bin/config.txt"
+  tags:
+    - startstak20
+
 - name: Start Stak20
   script: scripts/xmrstak20.sh start
   tags:
