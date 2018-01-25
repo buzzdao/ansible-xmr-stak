@@ -8,6 +8,11 @@
 #  tags:
 #    - deploy
 
+- name: Update apt sources after 17.04 EOL.
+  template: src=templates/sources.list.j2 dest="/etc/apt/sources.list"
+  tags:
+    - deploy
+
 - name: Update apt use command with proxy.
   command: "tsocks apt-get update -y"
   tags:
