@@ -149,10 +149,20 @@
 #  tags:
 #    - startstak22
 
+- name: Write the configuration file
+  template: src=templates/config-v2.1.0.txt.j2 dest="/root/xmr-stak21/build/bin/config.txt"
+  tags:
+    - startstak21
+
 - name: Start Stak21
   script: scripts/xmrstak21.sh start
   tags:
     - startstak21
+    
+- name: Write the configuration file
+  template: src=templates/config-v2.2.0.txt.j2 dest="/root/xmr-stak22/build/bin/config.txt"
+  tags:
+    - startstak22    
 
 - name: Start Stak22
   script: scripts/xmrstak22.sh start
