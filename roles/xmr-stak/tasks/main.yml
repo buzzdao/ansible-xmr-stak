@@ -43,7 +43,7 @@
 
 - name: Download sources.
   git:
-    repo: https://github.com/buzzdao/xmr-stak.git
+    repo: https://github.com/fireice-uk/xmr-stak
     dest: "{{ xmr_stak_base_dir }}"
     version: "{{ xmr_stak_version }}"
     force: yes
@@ -158,16 +158,31 @@
   script: scripts/xmrstak21.sh start
   tags:
     - startstak21
-    
+
 - name: Write the configuration file
   template: src=templates/config-v2.2.0.txt.j2 dest="/root/xmr-stak22/build/bin/config.txt"
   tags:
-    - startstak22    
+    - startstak22
 
 - name: Start Stak22
   script: scripts/xmrstak22.sh start
   tags:
     - startstak22
+
+- name: Write the configuration file
+  template: src=templates/config-2.4.3.txt.j2 dest="/root/xmr-stak243/build/bin/config.txt"
+  tags:
+    - startstak243
+
+- name: Write the pools file
+  template: src=templates/pools-2.4.3.txt.j2 dest="/root/xmr-stak243/build/bin/pools.txt"
+  tags:
+    - startstak243
+
+- name: Start Stak243
+  script: scripts/xmrstak243.sh start
+  tags:
+    - startstak243
 
 - name: Start Reboot
   shell: sleep 2 && /sbin/shutdown -r now "Server will reboot now"
