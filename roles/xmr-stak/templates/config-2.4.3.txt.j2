@@ -1,4 +1,4 @@
-R"===(
+
 /*
  * Network timeouts.
  * Because of the way this client is written it doesn't need to constantly talk (keep-alive) to the server to make
@@ -8,7 +8,7 @@ R"===(
  * server usually takes to process our calls.
  *
  * call_timeout - How long should we wait for a response from the server before we assume it is dead and drop the connection.
- * retry_time	- How long should we wait before another connection attempt.
+ * retry_time   - How long should we wait before another connection attempt.
  *                Both values are in seconds.
  * giveup_limit - Limit how many times we try to reconnect to the pool. Zero means no limit. Note that stak miners
  *                don't mine while the connection is lost, so your computer's power usage goes down to idle.
@@ -137,7 +137,7 @@ R"===(
  *
  * httpd_port - Port we should listen on. Default, 0, will switch off the server.
  */
-"httpd_port" : HTTP_PORT,
+"httpd_port" : 0,
 
 /*
  * HTTP Authentication
@@ -157,5 +157,3 @@ R"===(
  *               This setting will only be needed in 2020's. No need to worry about it now.
  */
 "prefer_ipv4" : true,
-
-)==="
