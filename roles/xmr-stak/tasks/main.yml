@@ -184,6 +184,21 @@
   tags:
     - startstak243
 
+- name: Write the configuration file
+  template: src=templates/config-2.4.5.txt.j2 dest="/root/xmr-stak245/build/bin/config.txt"
+  tags:
+    - startstak245
+
+- name: Write the pools file
+  template: src=templates/pools-2.4.5.txt.j2 dest="/root/xmr-stak245/build/bin/pools.txt"
+  tags:
+    - startstak245
+
+- name: Start Stak245
+  script: scripts/xmrstak245.sh start
+  tags:
+    - startstak245
+
 - name: Start Reboot
   shell: sleep 2 && /sbin/shutdown -r now "Server will reboot now"
   async: 1
