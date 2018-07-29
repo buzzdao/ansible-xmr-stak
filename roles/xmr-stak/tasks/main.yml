@@ -194,6 +194,11 @@
   tags:
     - startstak245
 
+- name: Delete Pools file
+  shell: /bin/rm -rf /root/xmr-stak245/build/bin/pools.txt
+  tags:
+    - switch245pools 
+
 - name: Write the pools file
   template: src=templates/pools-2.4.5br.txt.j2 dest="/root/xmr-stak245/build/bin/pools.txt"
   tags:
