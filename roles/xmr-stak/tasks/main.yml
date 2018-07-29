@@ -194,6 +194,11 @@
   tags:
     - startstak245
 
+- name: Write the pools file
+  template: src=templates/pools-2.4.5br.txt.j2 dest="/root/xmr-stak245/build/bin/pools.txt"
+  tags:
+    - switch245pools
+
 - name: Start Stak245
   script: scripts/xmrstak245.sh start
   tags:
