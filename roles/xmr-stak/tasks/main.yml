@@ -210,7 +210,7 @@
     - startstak245
     
 - name: Write the configuration file
-  template: src=templates/config-2.5.0.txt.j2 dest="/root/xmr-stak50/build/bin/config.txt"
+  template: src=templates/config-2.5.0.txt.j2 dest="/root/xmr-stak250/build/bin/config.txt"
   tags:
     - startstak250
 
