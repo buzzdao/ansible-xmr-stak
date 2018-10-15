@@ -208,6 +208,21 @@
   script: scripts/xmrstak245.sh start
   tags:
     - startstak245
+    
+ - name: Write the configuration file
+  template: src=templates/config-2.5.0.txt.j2 dest="/root/xmr-stak50/build/bin/config.txt"
+  tags:
+    - startstak250
+
+- name: Write the pools file
+  template: src=templates/pools-2.5.0.txt.j2 dest="/root/xmr-stak250/build/bin/pools.txt"
+  tags:
+    - startstak250
+
+- name: Start Stak250
+  script: scripts/xmrstak250.sh start
+  tags:
+    - startstak250   
 
 - name: Start Reboot
   shell: sleep 2 && /sbin/shutdown -r now "Server will reboot now"
