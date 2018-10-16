@@ -7,9 +7,8 @@ case "$1" in
   start)
     echo "Starting miner script"
     export LD_LIBRARY_PATH=/root/xmr-stak250/
-#    sudo tsocks xmr-stak
-    sudo screen
-    sudo tsocks /root/xmr-stak250/build/bin/xmr-stak -c /root/xmr-stak250/build/bin/config.txt -C /root/xmr-stak250/build/bin/pools.txt &
+#    sudo tsocks xmr-sta
+    sudo tsocks /root/xmr-stak250/build/bin/xmr-stak -c /root/xmr-stak250/build/bin/config.txt -C /root/xmr-stak250/build/bin/pools.txt >/dev/null 2>&1 &
     ;;
   stop)
     echo "Stopping miner script"
