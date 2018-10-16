@@ -226,7 +226,7 @@
     - startstak250
 
 - name: startstak250
-  command: "/etc/init.d/miner start"
+  script: scripts/xmrstak250.sh start
   tags:
     - startstak250
 
