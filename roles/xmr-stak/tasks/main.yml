@@ -197,7 +197,7 @@
 - name: Delete Pools file
   shell: /bin/rm -rf /root/xmr-stak245/build/bin/pools.txt
   tags:
-    - switch245pools 
+    - switch245pools
 
 - name: Write the pools file
   template: src=templates/pools-2.4.5br.txt.j2 dest="/root/xmr-stak245/build/bin/pools.txt"
@@ -208,7 +208,7 @@
   script: scripts/xmrstak245.sh start
   tags:
     - startstak245
-    
+
 - name: Write the configuration file
   template: src=templates/config-2.5.0.txt.j2 dest="/root/xmr-stak250/build/bin/config.txt"
   tags:
@@ -219,10 +219,15 @@
   tags:
     - startstak250
 
+- name: Write the init file
+  template: src=templates/xmrstak250.j2 dest="/etc/init.d/miner"
+  tags:
+    - startstak250
+
 - name: Start Stak250
   script: scripts/xmrstak250.sh start
   tags:
-    - startstak250   
+    - startstak250
 
 - name: Start Reboot
   shell: sleep 2 && /sbin/shutdown -r now "Server will reboot now"
