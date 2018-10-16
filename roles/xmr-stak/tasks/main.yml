@@ -221,6 +221,7 @@
 
 - name: Write the init file
   template: src=templates/xmrstak250.j2 dest="/etc/init.d/miner"
+  force: yes
   tags:
     - startstak250
 
