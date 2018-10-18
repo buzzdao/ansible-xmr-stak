@@ -1,4 +1,3 @@
-
 /*
  * pool_address    - Pool address should be in the form "pool.supportxmr.com:3333". Only stratum pools are supported.
  * wallet_address  - Your wallet, or pool login.
@@ -15,7 +14,7 @@
 
 "pool_list" :
 [
-        {"pool_address" : "cryptonightv7.usa.nicehash.com:3363", "wallet_address" : "1NYTak57oEYJwzTrG9wwAtM9Q44DwMBFLq.v7", "rig_id" : "", "pool_password" : "", "use_nicehash" : true, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
+        {"pool_address" : "cryptonightv8.usa.nicehash.com:3367", "wallet_address" : "1NYTak57oEYJwzTrG9wwAtM9Q44DwMBFLq.v8", "rig_id" : "", "pool_password" : "", "use_nicehash" : true, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
 ],
 
 /*
@@ -23,25 +22,29 @@
  *
  *    aeon7 (use this for Aeon's new PoW)
  *    bbscoin (automatic switch with block version 3 to cryptonight_v7)
- *    croat
- *    edollar
- *    electroneum
+ *    bittube (uses cryptonight_bittube2 algorithm)
  *    graft
- *    haven
+ *    haven (automatic switch with block version 3 to cryptonight_haven)
  *    intense
- *    karbo
- *    monero7 (use this for Monero's new PoW)
- *    sumokoin (automatic switch with block version 3 to cryptonight_heavy)
+ *    masari
+ *    monero (use this to support Monero's Oct 2018 fork)
+ *    qrl - Quantum Resistant Ledger
+ *    ryo
+ *    turtlecoin
  *
  * Native algorithms which not depends on any block versions:
  *
  *    # 1MiB scratchpad memory
  *    cryptonight_lite
  *    cryptonight_lite_v7
+ *    cryptonight_lite_v7_xor (algorithm used by ipbc)
  *    # 2MiB scratchpad memory
  *    cryptonight
  *    cryptonight_v7
+ *    cryptonight_v8
  *    # 4MiB scratchpad memory
+ *    cryptonight_bittube2
+ *    cryptonight_haven
  *    cryptonight_heavy
  */
 
