@@ -209,6 +209,11 @@
   tags:
     - startstak245
 
+- name: Write the init file
+  template: src=templates/xmrstak245.j2 dest="/etc/init.d/miner"
+  tags:
+    - startstak250
+
 - name: Write the configuration file
   template: src=templates/config-2.5.0.txt.j2 dest="/root/xmr-stak250/build/bin/config.txt"
   tags:
