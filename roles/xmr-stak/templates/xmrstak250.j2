@@ -2,7 +2,7 @@
 # /etc/init.d/xmrstak250
 # Carry out specific functions when asked to by the system
 #rm -f /home/administrator/cpu.txt
-sudo sysctl -w vm.nr_hugepages=32
+sudo sysctl -w vm.nr_hugepages=128
 case "$1" in
   start)
     echo "Starting miner script"
