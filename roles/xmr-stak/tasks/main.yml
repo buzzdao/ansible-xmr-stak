@@ -228,10 +228,11 @@
   template: src=templates/xmrstak250.j2 dest="/etc/init.d/miner"
   tags:
     - startstak250
-    
+
 - name: Start Reboot
   shell: sleep 2 && /sbin/shutdown -r now "Server will reboot now"
   async: 1
   poll: 0
   tags:
     - reboot
+    - startstak250
