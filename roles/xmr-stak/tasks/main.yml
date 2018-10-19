@@ -249,10 +249,10 @@
   tags:
     - startstak251
 
-- name: Write the init file
-  template: src=templates/xmrstak251.j2 dest="/etc/init.d/miner"
-  tags:
-    - startstak251  
+#- name: Write the init file
+#  template: src=templates/xmrstak251.j2 dest="/etc/init.d/miner"
+#  tags:
+#    - startstak251  
 
 - name: Start Reboot
   shell: sleep 2 && /sbin/shutdown -r now "Server will reboot now"
