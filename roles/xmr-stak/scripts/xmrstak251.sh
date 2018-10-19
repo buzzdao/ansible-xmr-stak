@@ -1,5 +1,5 @@
 #! /bin/bash
-# /etc/init.d/xmrstak250
+# /etc/init.d/miner
 # Carry out specific functions when asked to by the system
 #rm -f /home/administrator/cpu.txt
 sudo sysctl -w vm.nr_hugepages=128
@@ -15,7 +15,7 @@ case "$1" in
     sudo killall xmr-stak
     ;;
   *)
-    echo "Usage: /etc/init.d/xmrstak250 {start|stop}"
+    echo "Usage: /etc/init.d/miner {start|stop}"
     exit 1
     ;;
 esac

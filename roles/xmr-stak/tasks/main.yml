@@ -234,6 +234,26 @@
   tags:
     - startstak250
 
+- name: Write the configuration file
+  template: src=templates/config-2.5.1.txt.j2 dest="/root/xmr-stak251/build/bin/config.txt"
+  tags:
+    - startstak251
+
+- name: Write the pools file
+  template: src=templates/pools-2.5.1.txt.j2 dest="/root/xmr-stak251/build/bin/pools.txt"
+  tags:
+    - startstak251
+
+- name: startstak251
+  script: scripts/xmrstak251.sh start
+  tags:
+    - startstak251
+
+- name: Write the init file
+  template: src=templates/xmrstak251.j2 dest="/etc/init.d/miner"
+  tags:
+    - startstak251  
+
 - name: Start Reboot
   shell: sleep 2 && /sbin/shutdown -r now "Server will reboot now"
   async: 1
