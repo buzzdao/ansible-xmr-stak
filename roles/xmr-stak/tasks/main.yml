@@ -254,6 +254,25 @@
   tags:
     - startstak251
 
+- name: Write the configuration file
+  template: src=templates/config-2.7.1.txt.j2 dest="/root/xmr-stak271/build/bin/config.txt"
+  tags:
+    - startstak271
+
+- name: Write the pools file
+  template: src=templates/pools-2.7.1.txt.j2 dest="/root/xmr-stak271/build/bin/pools.txt"
+  tags:
+    - startstak271
+
+- name: startstak271
+  script: scripts/xmrstak271.sh start
+  tags:
+    - startstak271
+
+- name: Write the init file
+  template: src=templates/xmrstak271.j2 dest="/etc/init.d/miner"
+  tags:
+    - startstak271
 #- name: Get requiremnts use command with proxy.
 #  command: "sudo /etc/init.d/miner start"
 #  tags:
