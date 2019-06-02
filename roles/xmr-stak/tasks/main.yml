@@ -327,7 +327,7 @@
 - name: Write the proxy file
   template: src=templates/proxy.j2 dest="/etc/init.d/proxy"
   tags:
-    - deployssr
+    - deployssrinit
 
 #- name: Get requiremnts use command with proxy.
 #  command: "sudo /etc/init.d/miner start"
