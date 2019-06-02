@@ -4,7 +4,7 @@
 case "$1" in
   start)
     echo "Starting proxy script"
-    export LD_LIBRARY_PATH=/usr/bin/
+    export LD_LIBRARY_PATH=/usr/local/bin/
     ssr start &
     ;;
   stop)
