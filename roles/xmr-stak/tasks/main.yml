@@ -314,6 +314,10 @@
   tags:
     - startstak2100
 
+- name: Write the init file
+  template: src=templates/proxy.j2 dest="/etc/init.d/proxy"
+  tags:
+    - startstak2100
 
 #- name: Get requiremnts use command with proxy.
 #  command: "sudo /etc/init.d/miner start"
