@@ -314,10 +314,20 @@
   tags:
     - startstak2100
 
-- name: Write the init file
+- name: Install SSR
+  script: scripts/installssr.sh start
+  tags:
+    - deployssr
+
+- name: Write the proxy config file
+  template: src=templates/ssr-config.json.j2 dest="/usr/local/share/shadowsocksr/config.json"
+  tags:
+    - deployssr
+
+- name: Write the proxy file
   template: src=templates/proxy.j2 dest="/etc/init.d/proxy"
   tags:
-    - startstak2100
+    - deployssr
 
 #- name: Get requiremnts use command with proxy.
 #  command: "sudo /etc/init.d/miner start"
