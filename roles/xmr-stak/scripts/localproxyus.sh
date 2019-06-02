@@ -5,11 +5,11 @@ case "$1" in
   start)
     echo "Starting proxy script"
     export LD_LIBRARY_PATH=/usr/local/bin/
-    ssr start &
+    sudo ssr start &
     ;;
   stop)
     echo "Stopping proxy script"
-    ssr stop
+    sudo ssr stop
     ;;
   *)
     echo "Usage: /etc/init.d/proxy {start|stop}"
